@@ -22,17 +22,11 @@ void loop() {
   Serial.println(yValue);
   delay(300);
 
-
-if (button_state == 0){
- Serial.println("Button_down");
-  noTone(12);
-  }else 
-
- if (xValue==514&& yValue<1023){
+ if (xValue<514&& yValue<1023){
  Serial.println("DO");
    tone(12, 262); 
 }
-if (xValue==514 && yValue==0){
+if (xValue==514 && yValue<0){
  Serial.println("RE");
    tone(12, 294); 
    
@@ -42,7 +36,7 @@ if (xValue==1023 && yValue==514){
     tone(12, 330);
 
 }
-if (xValue<0 && yValue==514){
+if (xValue==0 && yValue==514){
  Serial.println("FA");
    tone(12, 349);
    
@@ -51,7 +45,7 @@ if (xValue==1023 && yValue<513){
  Serial.println("SOL");
    tone(12, 392);
 }
-if (xValue==0 && yValue<0){
+if (xValue==0 && yValue==0){
  Serial.println("La");
    tone(12, 440);
 }
